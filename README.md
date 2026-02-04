@@ -1,7 +1,7 @@
-clk divider module 
+``clk divider module 
 
 
-``module divider(clk,clk1,clk2);
+module divider(clk,clk1,clk2);
 input clk;
 parameter wr=50000000,rd=200000000;
 output reg clk1,clk2;
