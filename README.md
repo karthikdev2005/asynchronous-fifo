@@ -1,7 +1,7 @@
 asynchronous fifo using gray pointer (CDC: Clock Domain Crossing)
 
 top module
-`
+``
 module top(data_in,data_out,wr_ena,rd_ena,clk,rst,empty,full);
 parameter depth=8;
 parameter size=8;
@@ -26,7 +26,7 @@ memory dutt(.data_in(data_in),.data_out(data_out),.wr_ena(wr_ena),.rd_ena(rd_ena
 endmodule
 
 
-``clk divider module // only for fpga purpose
+clk divider module // only for fpga purpose
 module divider(clk,clk1,clk2);
 input clk;
 parameter wr=50000000,rd=200000000;
@@ -63,7 +63,7 @@ endmodule
 
 
 
-``writing and full condition
+writing and full condition
 
 module writing(wr_ena,clk1,full,empty,wr_ptr,rd_ptr,rst);
 parameter depth=8;
@@ -101,7 +101,7 @@ end
 end
 endmodule
 
-``reading and empty condition
+reading and empty condition
 
 module reading(rd_ena,clk2,full,empty,wr_ptr,rd_ptr,rst);
 parameter depth=8,size=8;
@@ -141,7 +141,7 @@ end
 endmodule
 
 
-``binary to gray converter
+binary to gray converter
 
 
 module binary_to_gray(count,gray);
@@ -151,7 +151,7 @@ output [$clog2(depth):0]gray;
 assign gray=count^(count>>1);
 endmodule
 
-''gray to binary converter
+gray to binary converter
 
 module gray_to_binary #(parameter DEPTH = 8)(
     input  wire [$clog2(DEPTH):0] gray,
@@ -170,7 +170,7 @@ end
 endmodule
 
 
-''syncroniser
+syncroniser
 
 module syncroniser(data_in,data_out,clk);
 parameter depth=8;
@@ -185,7 +185,7 @@ data_out<=data_out_reg;
 end
 endmodule
 
-''memory
+memory
 
 module memory(data_in,data_out,wr_ena,rd_ena,wr_ptr,rd_ptr,clk1,clk2);
 parameter size=8,depth=8;
