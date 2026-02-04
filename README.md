@@ -1,4 +1,6 @@
-```top module
+```
+Asynchronous fifo using gray pointer (CDC: Clock domain crossing)
+top module
 
 module top(data_in,data_out,wr_ena,rd_ena,clk,rst,empty,full);
 parameter depth=8;
